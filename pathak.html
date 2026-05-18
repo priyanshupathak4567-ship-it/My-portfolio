@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome | Priyanshu Pathak Portfolio</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url("https://i.ytimg.com/vi/eHue9ug3Cy0/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDArvMsxRN45rwvnreJBARYYNvhxA"); alt="indian railways">;
+     background-size: cover;       
+  background-position: center;
+  background-repeat: no-repeat; 
+    color:white;
+    text-align:center;
+}
+
+.container{
+    max-width:700px;
+    padding:40px;
+    background: rgba(0,0,0,0.65);
+    border-radius:20px;
+    box-shadow:0 0 25px rgba(0,0,0,0.5);
+    animation: fadeIn 2s ease;
+}
+
+h1{
+    font-size:3rem;
+    margin-bottom:20px;
+    color:#ffd700;
+}
+
+h2{
+    font-size:2rem;
+    margin-bottom:20px;
+}
+
+p{
+    font-size:1.2rem;
+    margin-bottom:30px;
+    line-height:1.6;
+}
+
+.btn{
+    display:inline-block;
+    padding:15px 35px;
+    background:#ffd700;
+    color:black;
+    text-decoration:none;
+    font-size:1.1rem;
+    font-weight:bold;
+    border-radius:50px;
+    transition:0.3s;
+}
+
+.btn:hover{
+    background:white;
+    transform:scale(1.05);
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(30px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>I am Priyanshu Pathak</h1>
+    <h2>Welcome To My Portfolio</h2>
+    <p>
+        This portfolio is based on Indian Railways and  my HTML and CSS skills.
+        Click the button below to explore my project.
+    </p>
+    <a href="index.html" class="btn">Enter Portfolio</a>
+</div>
+
+</body>
+</html>
