@@ -1,129 +1,386 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Priyanshu Pathak Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Priyanshu Pathak Portfolio</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+  scroll-behavior:smooth;
+}
+
+body{
+  background:#f4f4f4;
+  color:#333;
+  line-height:1.6;
+}
+
+/* Header */
+header{
+  background:#0b3d91;
+  color:white;
+  text-align:center;
+  padding:25px;
+}
+
+header h1{
+  font-size:40px;
+}
+
+header p{
+  margin-top:10px;
+}
+
+/* Navbar */
+nav{
+  background:#072b63;
+  text-align:center;
+  padding:15px;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  margin:15px;
+  font-weight:bold;
+  transition:0.3s;
+}
+
+nav a:hover{
+  color:yellow;
+}
+
+/* Hero Section */
+.hero{
+  height:100vh;
+  background:
+    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url("https://i.ytimg.com/vi/eHue9ug3Cy0/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDArvMsxRN45rwvnreJBARYYNvhxA");
+
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  color:white;
+}
+
+.hero-text{
+  max-width:700px;
+  padding:30px;
+  background:rgba(0,0,0,0.4);
+  border-radius:15px;
+}
+
+.hero-text h2{
+  font-size:45px;
+}
+
+.hero-text p{
+  margin:20px 0;
+  font-size:18px;
+}
+
+.hero button{
+  padding:12px 25px;
+  border:none;
+  background:#ffd700;
+  font-size:16px;
+  border-radius:5px;
+  cursor:pointer;
+  transition:0.3s;
+  font-weight:bold;
+}
+
+.hero button:hover{
+  background:white;
+}
+
+/* Sections */
+.section{
+  padding:60px 10%;
+}
+
+.title{
+  text-align:center;
+  margin-bottom:30px;
+  color:#0b3d91;
+  font-size:32px;
+}
+
+/* Cards */
+.cards{
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.card{
+  background:white;
+  padding:25px;
+  border-radius:10px;
+  box-shadow:0 0 10px rgba(0,0,0,0.1);
+  flex:1;
+  min-width:250px;
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+}
+
+.card h3,
+.card h4{
+  color:#0b3d91;
+  margin-bottom:10px;
+}
+
+/* Gallery */
+.gallery{
+  display:flex;
+  gap:30px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+.image-box{
+  width:160px;
+  height:180px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow:0 0 10px rgba(0,0,0,0.1);
+  background:white;
+}
+
+.image-box img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* Video */
+iframe{
+  margin-bottom:30px;
+  max-width:100%;
+  border-radius:10px;
+}
+
+/* Contact Form */
+.contact-form{
+  max-width:600px;
+  margin:auto;
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+.contact-form input,
+.contact-form textarea{
+  padding:15px;
+  border:1px solid #ccc;
+  border-radius:8px;
+  font-size:16px;
+}
+
+.contact-form button{
+  padding:15px;
+  border:none;
+  background:#0b3d91;
+  color:white;
+  font-size:18px;
+  border-radius:8px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.contact-form button:hover{
+  background:#072b63;
+}
+
+/* Footer */
+footer{
+  background:#0b3d91;
+  color:white;
+  text-align:center;
+  padding:20px;
+}
+
+/* Responsive */
+@media (max-width:768px){
+  .hero-text h2{
+    font-size:30px;
+  }
+
+  .hero-text p{
+    font-size:16px;
+  }
+
+  .section{
+    padding:40px 5%;
+  }
+
+  iframe{
+    width:100%;
+    height:250px;
+  }
+
+  nav a{
+    display:inline-block;
+    margin:8px;
+  }
+}
+</style>
 </head>
 
 <body>
-  <header>
-    <h1>Priyanshu Pathak</h1>
-    <p>Indian Railways Portfolio</p>
-  </header>
 
-  <nav>
-    <a href="#about">About </a>
-    <a href="#railways">Railways</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#video">video</a>
-    <a href="#contact">Contact</a>
-  </nav>
-  <section class="hero">
-    <div class="hero-text">
-      <h2>Welcome To My Railways Portfolio</h2>
-      <p>
-        Exploring the journey of Indian Railways through new Technology.
-      </p>
+<header>
+  <h1>Priyanshu Pathak</h1>
+  <p>Indian Railways Portfolio</p>
+</header>
 
-<a href="https://en.wikipedia.org/wiki/Indian_Railways">
-<button>Explore More</button> </a>
-    </div>
-  </section>
-  <section id="about" class="section">
+<nav>
+  <a href="#about">About</a>
+  <a href="#railways">Railways</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#video">Video</a>
+  <a href="#contact">Contact</a>
+</nav>
 
-    <h2 class="title">About Me</h2>
+<section class="hero">
+  <div class="hero-text">
+    <h2>Welcome To My Railways Portfolio</h2>
+    <p>
+      Exploring the journey of Indian Railways through new Technology.
+    </p>
 
-    <div class="card">
-      <p>
-        Hello! My name is Priyanshu Pathak.
-        I am learning HTML and CSS.
-        This project is based on Indian Railways and shows my learning of html and css.
-      </p>
-    </div>
-  </section>
-  <section id="railways" class="section">
-
-    <h2 class="title">About Indian Railways</h2>
-    <div class="cards">
-      <div class="card">
-        <h3>Largest Network</h3>
-        <p>
-          Indian Railways is one of the biggest railway networks in the world.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Fast Transport</h3>
-        <p>
-          Railways help millions of passengers to travel 24/7.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Connection</h3>
-        <p>
-          Railways connect villages, towns and cities across whole India.
-        </p>
-      </div>
-    
-
-    <div class="card">
-      <h4>Kinds of trains</h4>
-      <p>
-        Indian Railways has various Kinds of trains such as Rajdhani,Shatabdi and Vandebharat.
-        </p>
-        </div>
-
-        
-        </div>
-
-  </section>
-  <section id="gallery" class="section">
-
-    <h2 class="title">Railway Gallery</h2>
-
-    <div class="gallery">
-
-      <div class="image-box"> <img src="https://pbs.twimg.com/profile_images/1810427749120573440/xqXr7zPv.jpg" width="150" height"100"></div>
-      <div class="image-box"> <img src="https://images.pexels.com/photos/16456875/pexels-photo-16456875.jpeg?cs=srgb&dl=pexels-kishanjose-16456875.jpg&fm=jpg"width="160" height="180"></div>
-      <div class="image-box"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOIZZmPfO_wJXJCz5GYIZhLJGdiztTvDmhcA&s" width="150" height="170"></div>
-      <div class="image-box">
-        <img src="https://i.pinimg.com/originals/96/9f/1d/969f1d741d47647fe6f300ab2aea9c53.jpg" width="150" Height ="155"</div>
-    
-
-  </section>
-  <section id="video" class="section">
-    <h3 class="title"> Railways Video </h3>
-    <CENTER><iframe <iframe width="800" height="450" src="https://www.youtube.com/embed/CeR-WcKfvNU" title="The Great Indian Railways: World&#39;s Most Complex Rail System" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> </CENTER>
-
-
-    <CENTER> <iframe <iframe width="800" height="450" src="https://www.youtube.com/embed/RaYG1wXhFW4" title="Top 10 Fastest Trains of India??" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-  </center>
-  </section>
-
-<section id="contact" class="section">
-
-  <h2 class="title">Contact Me</h2>
-
-  <form class="contact-form" action="about.html">
-
-    <input type="text" placeholder="Enter Your Name" required>
-
-    <input type="email" placeholder="Enter Your Email" required>
-
-    <textarea rows="5" placeholder="Enter Your Message" required></textarea>
-
-    <button type="submit">Send Message</button>
-
-  </form>
-
+    <a href="https://en.wikipedia.org/wiki/Indian_Railways" target="_blank">
+      <button type="button">Explore More</button>
+    </a>
+  </div>
 </section>
 
-  <footer>
-    <p> Priyanshu Pathak | School Project 2026</p>
-  </footer>
+<section id="about" class="section">
+  <h2 class="title">About Me</h2>
+
+  <div class="card">
+    <p>
+      Hello! My name is Priyanshu Pathak.
+      I am learning HTML and CSS.
+      This project is based on Indian Railways and shows my learning of HTML and CSS.
+    </p>
+  </div>
+</section>
+
+<section id="railways" class="section">
+  <h2 class="title">About Indian Railways</h2>
+
+  <div class="cards">
+    <div class="card">
+      <h3>Largest Network</h3>
+      <p>
+        Indian Railways is one of the biggest railway networks in the world.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Fast Transport</h3>
+      <p>
+        Railways help millions of passengers to travel 24/7.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Connection</h3>
+      <p>
+        Railways connect villages, towns and cities across whole India.
+      </p>
+    </div>
+
+    <div class="card">
+      <h4>Kinds of Trains</h4>
+      <p>
+        Indian Railways has various kinds of trains such as Rajdhani,
+        Shatabdi and Vande Bharat.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="gallery" class="section">
+  <h2 class="title">Railway Gallery</h2>
+
+  <div class="gallery">
+    <div class="image-box">
+      <img src="https://pbs.twimg.com/profile_images/1810427749120573440/xqXr7zPv.jpg" alt="Indian Railways Logo">
+    </div>
+
+    <div class="image-box">
+      <img src="https://images.pexels.com/photos/16456875/pexels-photo-16456875.jpeg?cs=srgb&dl=pexels-kishanjose-16456875.jpg&fm=jpg" alt="Train">
+    </div>
+
+    <div class="image-box">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOIZZmPfO_wJXJCz5GYIZhLJGdiztTvDmhcA&s" alt="Indian Train">
+    </div>
+
+    <div class="image-box">
+      <img src="https://i.pinimg.com/originals/96/9f/1d/969f1d741d47647fe6f300ab2aea9c53.jpg" alt="Railway Station">
+    </div>
+  </div>
+</section>
+
+<section id="video" class="section">
+  <h3 class="title">Railways Video</h3>
+
+  <center>
+    <iframe width="800" height="450"
+      src="https://www.youtube.com/embed/CeR-WcKfvNU"
+      title="The Great Indian Railways"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen>
+    </iframe>
+  </center>
+
+  <center>
+    <iframe width="800" height="450"
+      src="https://www.youtube.com/embed/RaYG1wXhFW4"
+      title="Top 10 Fastest Trains of India"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen>
+    </iframe>
+  </center>
+</section>
+
+<section id="contact" class="section">
+  <h2 class="title">Contact Me</h2>
+
+  <form class="contact-form" action="success.html">
+    <input type="text" placeholder="Enter Your Name" required>
+    <input type="email" placeholder="Enter Your Email" required>
+    <textarea rows="5" placeholder="Enter Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+<footer>
+  <p>Priyanshu Pathak | School Project 2026</p>
+</footer>
 
 </body>
 </html>
